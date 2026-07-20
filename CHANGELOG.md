@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.1.2
+
+### Bug Fixes
+
+- Added `./server` and `./tui` exports to `package.json` for npm plugin loading.
+- Fixed async config hook type definition.
+
 ## 0.1.0
 
 ### Features
