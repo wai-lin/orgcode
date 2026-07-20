@@ -6,11 +6,32 @@ ORGCODE is an opinionated multi-agent workflow plugin for [OpenCode](https://ope
 - **Senior** — implements features using TDD.
 - **Techlead** — reviews the senior's output.
 
+## Quick start
+
+1. Make sure you have a project folder with OpenCode already initialized.
+2. Create or open your `opencode.json` file in the project root.
+3. Add `orgcode` to the `plugin` array:
+
+   ```json
+   {
+     "$schema": "https://opencode.ai/config.json",
+     "plugin": ["orgcode"]
+   }
+   ```
+
+4. Save the file and restart OpenCode.
+5. OpenCode will automatically download and install the ORGCODE plugin from npm.
+6. In your OpenCode session, type `/orgcode` to start the workflow.
+
+No `npm install`, no cloning, no manual setup is required.
+
 ## Install
 
-ORGCODE is published on npm. OpenCode automatically installs and loads npm plugins, so you do **not** need to clone this repo or run `npm install` yourself.
+ORGCODE is published on npm. OpenCode auto-installs npm plugins, so you do not need to clone this repository or run any install command yourself.
 
-Add ORGCODE to your project's `opencode.json`:
+### Step 1: add the plugin to your OpenCode config
+
+Open `opencode.json` in your project root and add `"orgcode"` to the `plugin` array:
 
 ```json
 {
@@ -19,27 +40,45 @@ Add ORGCODE to your project's `opencode.json`:
 }
 ```
 
-Then restart OpenCode. The plugin will be downloaded and installed automatically on startup.
+### Step 2: restart OpenCode
+
+Quit and restart OpenCode. The plugin will be downloaded and installed automatically.
+
+### Step 3: verify it loaded
+
+Type `/` in the OpenCode prompt. You should see `/orgcode` and `/orgcode_yolo` in the command list.
 
 ## Usage
 
-In your OpenCode session:
+### Checkpoint mode
+
+Run one full task cycle at a time and ask for confirmation before continuing:
 
 ```
 /orgcode
 ```
 
-Starts the workflow in **checkpoint mode**. The manager runs one full task cycle (senior → techlead → done) and then asks you whether to continue.
+### Autonomous mode
+
+Run continuously until all tasks are done or an error occurs:
+
+```
+/orgcode_yolo
+```
+
+Run only specific tasks:
 
 ```
 /orgcode_yolo feat-001 feat-002
 ```
 
-Starts the workflow in **autonomous mode** for the given task IDs. It will skip missing or already-done tasks. If you omit the IDs, it runs every `todo` task until completion or error.
+Missing or already-done tasks are skipped automatically.
 
-## Tasks
+## Creating tasks
 
-Tasks live in the `tasks/` directory as Markdown files with a TOML frontmatter block:
+Before running `/orgcode`, create at least one task in the `tasks/` folder.
+
+Tasks are Markdown files with a TOML frontmatter block:
 
 ```markdown
 +++
@@ -56,11 +95,13 @@ priority = "high"
 Implement email/password authentication.
 ```
 
-Allowed `status` values: `todo`, `in_progress`, `in_review`, `done`.
-Allowed `assignee` values: `manager`, `senior`, `techlead`.
-Allowed `priority` values: `low`, `medium`, `high`.
+Allowed values:
 
-Agents manage tasks through the `orgcode_task` custom tool instead of editing files directly.
+- `status`: `todo`, `in_progress`, `in_review`, `done`
+- `assignee`: `manager`, `senior`, `techlead`
+- `priority`: `low`, `medium`, `high`
+
+Agents manage tasks through the `orgcode_task` custom tool. Do not edit task files directly unless you have to.
 
 ## Workflow
 
