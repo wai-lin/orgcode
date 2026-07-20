@@ -1,6 +1,6 @@
 {
   "name": "orgcode-ai",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "OpenCode plugin for the ORGCODE senior/techlead/manager workflow.",
   "homepage": "https://github.com/wai-lin/orgcode",
   "license": "MIT",
