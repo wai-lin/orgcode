@@ -1,0 +1,48 @@
+{
+  "name": "orgcode",
+  "version": "0.1.0",
+  "description": "OpenCode plugin for the ORGCODE senior/techlead/manager workflow.",
+  "homepage": "https://github.com/wai-lin/orgcode",
+  "license": "MIT",
+  "author": "wai-lin",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wai-lin/orgcode.git"
+  },
+  "files": [
+    "dist"
+  ],
+  "type": "module",
+  "types": "./dist/index.d.mts",
+  "exports": {
+    ".": "./dist/index.mjs",
+    "./package.json": "./package.json"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "vp pack",
+    "dev": "vp pack --watch",
+    "test": "vp test",
+    "check": "vp check",
+    "prepublishOnly": "vp run build"
+  },
+  "dependencies": {
+    "@opencode-ai/plugin": "^1.18.3",
+    "smol-toml": "^1.7.0"
+  },
+  "devDependencies": {
+    "@types/node": "^26.1.1",
+    "bumpp": "^11.1.0",
+    "typescript": "^7.0.2",
+    "vite-plus": "catalog:"
+  },
+  "devEngines": {
+    "packageManager": {
+      "name": "pnpm",
+      "version": "11.15.1",
+      "onFail": "download"
+    }
+  }
+}
