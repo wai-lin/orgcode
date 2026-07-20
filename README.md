@@ -10,12 +10,12 @@ ORGCODE is an opinionated multi-agent workflow plugin for [OpenCode](https://ope
 
 1. Make sure you have a project folder with OpenCode already initialized.
 2. Create or open your `opencode.json` file in the project root.
-3. Add `orgcode` to the `plugin` array:
+3. Add `orgcode-ai` to the `plugin` array:
 
    ```json
    {
      "$schema": "https://opencode.ai/config.json",
-     "plugin": ["orgcode"]
+     "plugin": ["orgcode-ai"]
    }
    ```
 
@@ -36,7 +36,7 @@ Open `opencode.json` in your project root and add `"orgcode"` to the `plugin` ar
 ```json
 {
   "$schema": "https://opencode.ai/config.json",
-  "plugin": ["orgcode"]
+  "plugin": ["orgcode-ai"]
 }
 ```
 
