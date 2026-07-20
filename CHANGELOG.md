@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.1.4
+
+### Bug Fixes
+
+- Fix the published exports.
+
 ## 0.1.3
 
 ### Bug Fixes
