@@ -8,7 +8,9 @@ ORGCODE is an opinionated multi-agent workflow plugin for [OpenCode](https://ope
 
 ## Install
 
-Add ORGCODE to your OpenCode project config:
+ORGCODE is published on npm. OpenCode automatically installs and loads npm plugins, so you do **not** need to clone this repo or run `npm install` yourself.
+
+Add ORGCODE to your project's `opencode.json`:
 
 ```json
 {
@@ -17,7 +19,7 @@ Add ORGCODE to your OpenCode project config:
 }
 ```
 
-Then restart OpenCode.
+Then restart OpenCode. The plugin will be downloaded and installed automatically on startup.
 
 ## Usage
 
@@ -71,6 +73,8 @@ Agents manage tasks through the `orgcode_task` custom tool instead of editing fi
 7. Once approved, the manager marks the task as `done` and moves to the next one.
 
 ## Development
+
+These commands are for contributors working on the ORGCODE plugin itself:
 
 ```bash
 vp install
