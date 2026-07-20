@@ -98,6 +98,22 @@ test("orgcode_task filters tasks", async () => {
   expect(result).not.toContain('"id": "a"');
 });
 
+test("orgcode_task stores tasks under .orgcode/tasks/", async () => {
+  const context = await makeContext();
+
+  await orgcodeTask.execute(
+    {
+      action: "create",
+      task: { id: "feat-003", title: "Third task", status: "todo" },
+    },
+    context,
+  );
+
+  const expectedPath = path.join(context.directory, ".orgcode", "tasks", "feat-003.md");
+  const file = await fs.readFile(expectedPath, "utf8");
+  expect(file).toContain("Third task");
+});
+
 test("orgcode_task reports missing tasks", async () => {
   const context = await makeContext();
   const result = await orgcodeTask.execute({ action: "get", id: "missing" }, context);

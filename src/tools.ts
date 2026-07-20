@@ -32,7 +32,7 @@ export const orgcodeTask: ToolDefinition = tool({
     filter: filterSchema.optional(),
   },
   async execute(args, context) {
-    const tasksDir = path.join(context.directory, "tasks");
+    const tasksDir = path.join(context.directory, ".orgcode", "tasks");
 
     try {
       switch (args.action) {

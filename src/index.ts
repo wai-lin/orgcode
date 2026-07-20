@@ -62,7 +62,7 @@ const plugin: Plugin = async (_input: PluginInput) => {
         description: "Start ORGCODE with user checkpoints",
         agent: "orgcode-manager",
         template:
-          "Start ORGCODE in normal mode. Run the senior → techlead → done workflow one full task cycle at a time. After each complete task cycle, stop and ask the user whether to continue or stop. If no tasks exist in tasks/, ask the user what to build and create the first task.",
+          "Start ORGCODE in normal mode. Run the senior → techlead → done workflow one full task cycle at a time. After each complete task cycle, stop and ask the user whether to continue or stop. If no tasks exist in .orgcode/tasks/, ask the user what to build and create the first task.",
       };
       cfg.command["orgcode_yolo"] = {
         description: "Start ORGCODE in autonomous mode",

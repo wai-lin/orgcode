@@ -76,7 +76,7 @@ Missing or already-done tasks are skipped automatically.
 
 ## Creating tasks
 
-Before running `/orgcode`, create at least one task in the `tasks/` folder.
+Before running `/orgcode`, create at least one task in the `.orgcode/tasks/` folder.
 
 Tasks are Markdown files with a TOML frontmatter block:
 
