@@ -1,6 +1,6 @@
 import { expect, test } from "vite-plus/test";
 import type { Config, PluginInput } from "@opencode-ai/plugin";
-import plugin from "../src/index.ts";
+import pluginModule from "../src/index.ts";
 
 function makePluginInput(): PluginInput {
   return {
@@ -15,7 +15,7 @@ function makePluginInput(): PluginInput {
 }
 
 test("plugin registers agents, commands, and tools", async () => {
-  const hooks = await plugin(makePluginInput());
+  const hooks = await pluginModule.server(makePluginInput());
 
   expect(hooks.config).toBeDefined();
   expect(hooks.tool).toBeDefined();
@@ -37,7 +37,7 @@ test("plugin registers agents, commands, and tools", async () => {
 });
 
 test("plugin preserves existing agents and commands", async () => {
-  const hooks = await plugin(makePluginInput());
+  const hooks = await pluginModule.server(makePluginInput());
 
   const cfg: Config = {
     agent: { existing: { mode: "primary", description: "existing" } as never },

@@ -2,7 +2,7 @@ import type { Plugin, PluginInput } from "@opencode-ai/plugin";
 import { managerPrompt, seniorPrompt, techleadPrompt } from "./prompts.ts";
 import { orgcodeTask } from "./tools.ts";
 
-const plugin: Plugin = async (_input: PluginInput) => {
+const server: Plugin = async (_input: PluginInput) => {
   return {
     config: async (cfg) => {
       cfg.agent ??= {};
@@ -77,4 +77,4 @@ const plugin: Plugin = async (_input: PluginInput) => {
   };
 };
 
-export default plugin;
+export default { server };
