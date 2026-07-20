@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.1.3
+
+### Bug Fixes
+
+- Restored `./server` and `./tui` exports in `package.json` (lost in v0.1.2).
+
 ## 0.1.2
 
 ### Bug Fixes
