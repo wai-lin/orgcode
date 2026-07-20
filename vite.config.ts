@@ -5,7 +5,12 @@ export default defineConfig({
     dts: {
       tsgo: true,
     },
-    exports: true,
+    exports: {
+      customExports: {
+        "./server": "./dist/index.mjs",
+        "./tui": "./dist/index.mjs",
+      },
+    },
   },
   lint: {
     options: {

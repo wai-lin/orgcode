@@ -16,7 +16,9 @@
   "types": "./dist/index.d.mts",
   "exports": {
     ".": "./dist/index.mjs",
-    "./package.json": "./package.json"
+    "./package.json": "./package.json",
+    "./server": "./dist/index.mjs",
+    "./tui": "./dist/index.mjs"
   },
   "publishConfig": {
     "access": "public"
