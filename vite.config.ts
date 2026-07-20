@@ -6,9 +6,12 @@ export default defineConfig({
       tsgo: true,
     },
     exports: {
-      customExports: {
-        "./server": "./dist/index.mjs",
-        "./tui": "./dist/index.mjs",
+      customExports: (pkg) => {
+        pkg["."] = { import: "./dist/index.mjs", types: "./dist/index.d.mts" };
+        pkg["./server"] = { import: "./dist/index.mjs", types: "./dist/index.d.mts" };
+        pkg["./tui"] = { import: "./dist/index.mjs", types: "./dist/index.d.mts" };
+        pkg["./package.json"] = "./package.json";
+        return pkg;
       },
     },
   },

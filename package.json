@@ -15,10 +15,19 @@
   "type": "module",
   "types": "./dist/index.d.mts",
   "exports": {
-    ".": "./dist/index.mjs",
+    ".": {
+      "import": "./dist/index.mjs",
+      "types": "./dist/index.d.mts"
+    },
     "./package.json": "./package.json",
-    "./server": "./dist/index.mjs",
-    "./tui": "./dist/index.mjs"
+    "./server": {
+      "import": "./dist/index.mjs",
+      "types": "./dist/index.d.mts"
+    },
+    "./tui": {
+      "import": "./dist/index.mjs",
+      "types": "./dist/index.d.mts"
+    }
   },
   "publishConfig": {
     "access": "public"
