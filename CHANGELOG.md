@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.1.7
+
+### Bug Fixes
+
+- Make manager prompt more explicit about using task tool for delegation to subagents.
+
 ## 0.1.6
 
 ### Bug Fixes
