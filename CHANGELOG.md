@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.1.5
+
+### Bug Fixes
+
+- Use conditional exports format with `import` and `types` keys for OpenCode compatibility.
+
 ## 0.1.4
 
 ### Bug Fixes
