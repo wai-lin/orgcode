@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.1.6
+
+### Bug Fixes
+
+- Export `PluginModule` with `server` property for OpenCode compatibility.
+
 ## 0.1.5
 
 ### Bug Fixes
